@@ -32,7 +32,7 @@ nav ul{
 }
 nav h1{
     font-size: 30px;
-    background: linear-gradient( to right,rgb(66, 180, 205),white);
+    background: linear-gradient( to right,rgb(139, 92, 246),white);
     background-clip: text;
     color: transparent;
 }

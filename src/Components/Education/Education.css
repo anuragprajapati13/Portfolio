@@ -1,0 +1,133 @@
+#education {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(139, 92, 246, 0.12), transparent 32%),
+    linear-gradient(180deg, rgb(17, 20, 23) 0%, rgb(12, 17, 24) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 110px 20px 80px;
+}
+
+.education-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.education-eyebrow {
+  color: #8B5CF6;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.education-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgb(245, 240, 255);
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  font-weight: 700;
+}
+
+.education-title-accent {
+  color: rgb(139, 92, 246);
+}
+
+.education-icon {
+  font-size: 0.9em;
+}
+
+.education-subtitle {
+  color: rgba(221, 232, 248, 0.82);
+  font-size: 1.05rem;
+}
+
+.education-list {
+  width: min(1180px, 92%);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.education-card {
+  background: rgba(20, 26, 31, 0.95);
+  border-radius: 12px;
+  padding: 26px 24px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.education-card h2 {
+  color: rgb(243, 238, 255);
+  font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.education-institute {
+  color: rgba(219, 230, 245, 0.8);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.education-result {
+  color: rgb(139, 92, 246);
+  font-size: clamp(1.2rem, 1.8vw, 1.9rem);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  #education {
+    padding: 100px 14px 60px;
+    gap: 28px;
+  }
+
+  .education-title {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .education-subtitle {
+    font-size: 0.95rem;
+    max-width: 92%;
+  }
+
+  .education-list {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .education-card {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .education-card h2 {
+    margin-bottom: 12px;
+  }
+
+  .education-result {
+    line-height: 1.35;
+  }
+}
+

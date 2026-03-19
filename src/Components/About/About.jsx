@@ -1,141 +1,141 @@
-import React from 'react'
-import "./About.css"
-import Card from '../Card/Card'
-import mern from "../../assets/mern.png"
-import java from "../../assets/java.png"
-import dsa from "../../assets/dsa.png"
-import {useGSAP} from "@gsap/react"
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
-gsap.registerPlugin(ScrollTrigger)
-
+import React from "react";
+import "./About.css";
+import cvFile from "../../assets/cv.pdf";
+import { FaUserAstronaut } from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 function About() {
-  useGSAP(()=>{
-    gsap.from(".circle",{
-      x:-100,
-      duration:1,
-      opacity:0,
-      stagger:1,
-      scrollTrigger:{
-        trigger:".circle",
-        scroll:"body",
-        scrub:2,
-        start:"top 60%",
-        end:"top 30%"
-      }
-    })
-    gsap.from(".line",{
-      x:-100,
-      duration:1,
-      opacity:0,
-      stagger:1,
-      scrollTrigger:{
-        trigger:".line",
-        scroll:"body",
-        scrub:2,
-        start:"top 60%",
-        end:"top 30%"
-      }
-    })
-    gsap.from(".aboutdetails h1",{
-      x:-100,
-      duration:1,
-      opacity:0,
-      stagger:1,
-      scrollTrigger:{
-        trigger:".aboutdetails h1",
-        scroll:"body",
-        scrub:2,
-        start:"top 60%",
-        end:"top 30%"
-      }
-    })
-    gsap.from(".aboutdetails ul",{
-      y:100,
-      duration:1,
-      opacity:0,
-      stagger:1,
-      scrollTrigger:{
-        trigger:".aboutdetails ul",
-        scroll:"body",
-        scrub:2,
-        start:"top 60%",
-        end:"top 30%"
-      }
-    })
-    gsap.from(".rightabout",{
-      x:100,
-      duration:1,
-      opacity:0,
-      stagger:1,
-      scrollTrigger:{
-        trigger:".rightabout",
-        scroll:"body",
-        scrub:2,
-        start:"top 60%",
-        end:"top 30%"
-      }
-    })
-  })
+  useGSAP(() => {
+    const aboutTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 78%",
+      },
+    });
+
+    aboutTimeline
+      .from(".about-heading", {
+        y: 30,
+        duration: 0.6,
+        opacity: 0,
+      })
+      .from(
+        ".about-copy p",
+        {
+          y: 24,
+          duration: 0.7,
+          opacity: 0,
+          stagger: 0.12,
+        },
+        "-=0.35",
+      )
+      .from(
+        ".about-actions",
+        {
+          y: 20,
+          duration: 0.6,
+          opacity: 0,
+        },
+        "-=0.3",
+      )
+      .from(
+        ".about-feature-card",
+        {
+          y: 24,
+          duration: 0.7,
+          opacity: 0,
+          scale: 0.96,
+          stagger: 0.12,
+        },
+        "-=0.2",
+      );
+  });
+
   return (
-    <div id="about">
-      <div className="leftabout">
-        <div className="circle-line">
-          <div className="circle"></div>
-          <div className="line"></div>
-          <div className="circle"></div>
-          <div className="line"></div>
-          <div className="circle"></div>
+    <section id="about">
+      <div className="about-shell">
+        <div className="about-heading">
+          <span className="about-logo" aria-hidden="true">
+            <FaUserAstronaut />
+          </span>
+          <p className="about-eyebrow">About Me</p>
         </div>
-        <div className="aboutdetails">
-          <div className="personalinfo">
-            <h1>Personal Info</h1>
-            <ul>
-              <li>
-                <span>NAME</span> : RITTIK PANDIT
-              </li>
-              <li>
-                <span>AGE</span> : 21 YEARS
-              </li>
-              <li>
-                <span>GENDER</span> : MALE
-              </li>
-              <li>
-                <span>LANGUAGE KNOWN</span> : BENGALI, HINDI, ENGLISH
-              </li>
-            </ul>
-          </div>
-          <div className="education">
-            <h1>Education</h1>
-            <ul>
-              <li>
-                <span>DEGREE</span> : BTECH
-              </li>
-              <li>
-                <span>BRANCH</span> : COMPUTER SCIENCE & ENGINEERING
-              </li>
-              <li>
-                <span>CGPA</span> : 7.9
-              </li>
-            </ul>
-          </div>
-          <div className="skills">
-            <h1>Skills</h1>
-            <ul>
-              <li>MERN STACK</li>
-              <li>DSA</li>
-              <li>JAVA</li>
-            </ul>
-          </div>
+
+        <div className="about-copy">
+          <p>
+            I am a BTech Computer Science student at Lovely Professional
+            University (2023-2027) with a strong interest in extracting insights
+            from data and building intelligent, data-driven solutions.
+          </p>
+          <p>
+            My current focus is Data Science and Machine Learning, where I work
+            on analyzing datasets, developing predictive models, and creating
+            meaningful visualizations using modern tools and technologies.
+          </p>
+        </div>
+
+        <div className="about-actions">
+          <a
+            className="about-download-btn"
+            href={cvFile}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open CV
+          </a>
+        </div>
+
+        <div className="about-feature-grid">
+          <article className="about-feature-card">
+            <div className="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3 2.5 8 12 13 21.5 8 12 3Z"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M6 10.2V15c0 .8 2.7 3 6 3s6-2.2 6-3v-4.8"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21.5 8V14"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <h3>BTech CSE</h3>
+            <p>Lovely Professional University (2023-2027)</p>
+          </article>
+
+          <article className="about-feature-card">
+            <div className="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 18h10a4 4 0 1 0-.8-7.92A5.5 5.5 0 0 0 5.57 11.5 3.5 3.5 0 0 0 7 18Z"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Data Analyst</h3>
+            <p>Transforming data into insights using machine learning and analytics</p>
+          </article>
         </div>
       </div>
-      <div className="rightabout">
-        <Card title="MERN STACK WEB DEVELOPMENT" image={mern} />
-        <Card title="JAVA" image={java} />
-        <Card title="DSA" image={dsa} />
-      </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default About
+export default About;
