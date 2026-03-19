@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./card.css";
 import { FaGithub } from "react-icons/fa";
 
 function Card({ title, image, description, techStack = [], githubLink }) {
