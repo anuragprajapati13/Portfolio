@@ -53,7 +53,7 @@
 }
 
 .skill-universe {
-  width: min(88%, 500px);
+  width: min(92%, 580px);
   aspect-ratio: 1 / 1;
   position: relative;
   border-radius: 28px;
@@ -287,6 +287,7 @@
 .homedetails {
   width: min(100%, 760px);
   padding: clamp(22px, 2.4vw, 34px);
+  padding-top: clamp(40px, 6vw, 60px);
   border-radius: 22px;
   background: linear-gradient(
     145deg,

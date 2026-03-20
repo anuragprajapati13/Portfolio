@@ -40,7 +40,7 @@
 }
 
 .leftcontact {
-  width: 50%;
+  width: 45%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,7 @@
   justify-content: flex-start;
   padding-top: 0;
   gap: 14px;
+  margin-right: -10px;
 }
 
 .contact-heading {
@@ -224,12 +225,12 @@
   word-break: break-word;
 }
 .rightcontact {
-  width: 50%;
+  width: 45%;
   height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  perspective: 1000px;
+  margin-left: -10px;
 }
 form {
   width: var(--contact-panel-width);
