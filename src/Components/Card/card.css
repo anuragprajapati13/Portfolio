@@ -37,11 +37,21 @@
     2px 2px 20px rgb(139, 92, 246);
 }
 
-.hovercard img {
+
+.hovercard img,
+.hovercard svg {
   height: 78%;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(2px 2px 10px black);
+  filter: drop-shadow(0 4px 16px #8b5cf6) drop-shadow(0 1px 2px #0008);
+  transform: perspective(400px) rotateY(-8deg) scale(1.08);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.hovercard:hover img,
+.hovercard:hover svg {
+  transform: perspective(400px) rotateY(8deg) scale(1.12);
+  filter: drop-shadow(0 8px 32px #a78bfa) drop-shadow(0 2px 4px #000a);
 }
 
 .hovercard {

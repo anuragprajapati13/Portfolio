@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import "./Nav.css";
 import { Link } from "react-scroll";
+import achievementIcon from "../../assets/leetcode-logo.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -66,6 +67,15 @@ function Nav() {
           duration={500}
         >
           <li>Skills</li>
+        </Link>
+        <Link
+          to="achievements"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li>Achievement</li>
         </Link>
         <Link
           to="projects"
@@ -153,6 +163,15 @@ function Nav() {
           duration={500}
         >
           <li>Skills</li>
+        </Link>
+        <Link
+          to="achievements"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li>Achievement</li>
         </Link>
         <Link
           to="certificates"

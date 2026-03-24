@@ -14,124 +14,72 @@ function About() {
         start: "top 78%",
       },
     });
-
     aboutTimeline
-      .from(".about-heading", {
-        y: 30,
-        duration: 0.6,
-        opacity: 0,
-      })
-      .from(
-        ".about-copy p",
-        {
-          y: 24,
-          duration: 0.7,
-          opacity: 0,
-          stagger: 0.12,
-        },
-        "-=0.35",
-      )
-      .from(
-        ".about-actions",
-        {
-          y: 20,
-          duration: 0.6,
-          opacity: 0,
-        },
-        "-=0.3",
-      )
-      .from(
-        ".about-feature-card",
-        {
-          y: 24,
-          duration: 0.7,
-          opacity: 0,
-          scale: 0.96,
-          stagger: 0.12,
-        },
-        "-=0.2",
-      );
+      .from(".about-heading", { y: 30, duration: 0.6, opacity: 0 })
+      .from(".about-copy p", { y: 24, duration: 0.7, opacity: 0, stagger: 0.12 }, "-=0.35")
+      .from(".about-actions", { y: 20, duration: 0.6, opacity: 0 }, "-=0.3")
+      .from(".about-feature-card", { y: 24, duration: 0.7, opacity: 0, scale: 0.96, stagger: 0.12 }, "-=0.2");
   });
 
   return (
     <section id="about">
-      <div className="about-shell">
-        <div className="about-heading">
-          <span className="about-logo" aria-hidden="true">
-            <FaUserAstronaut />
-          </span>
-          <p className="about-eyebrow">About Me</p>
+      <div className="about-shell about-futuristic-layout">
+        <div className="about-left">
+          <div className="about-heading">
+            <span className="about-logo" aria-hidden="true">
+              <FaUserAstronaut />
+            </span>
+            <p className="about-eyebrow">About Me</p>
+          </div>
+          <div className="about-copy">
+            <p>
+              I'm <b>Anurag Prajapati</b>, a B.Tech Computer Science student at Lovely Professional University (2023–2027) with a strong passion for <b>Data Science, Data Analytics, and Machine Learning</b>.
+            </p>
+            <p>
+              I specialize in working with data to uncover insights and build intelligent solutions. From developing <b>predictive models</b> and <b>REST APIs</b> to creating <b>interactive dashboards</b>, I focus on transforming raw data into meaningful and actionable results.
+            </p>
+           
+            <p>
+              I am also trained in <b>Data Structures & Algorithms</b>, with strong problem-solving skills demonstrated through platforms like <b>LeetCode</b>. I aim to build scalable solutions, continuously learn emerging technologies, and leverage data to drive impactful decisions.
+            </p>
+          </div>
+          <div className="about-actions">
+            <a className="about-download-btn" href={cvFile} target="_blank" rel="noreferrer">
+              Open CV
+            </a>
+          </div>
         </div>
-
-        <div className="about-copy">
-          <p>
-            I am a BTech Computer Science student at Lovely Professional
-            University (2023-2027) with a strong interest in extracting insights
-            from data and building intelligent, data-driven solutions.
-          </p>
-          <p>
-            My current focus is Data Science and Machine Learning, where I work
-            on analyzing datasets, developing predictive models, and creating
-            meaningful visualizations using modern tools and technologies.
-          </p>
-        </div>
-
-        <div className="about-actions">
-          <a
-            className="about-download-btn"
-            href={cvFile}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open CV
-          </a>
-        </div>
-
-        <div className="about-feature-grid">
-          <article className="about-feature-card">
-            <div className="about-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 3 2.5 8 12 13 21.5 8 12 3Z"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M6 10.2V15c0 .8 2.7 3 6 3s6-2.2 6-3v-4.8"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M21.5 8V14"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-            <h3>BTech CSE</h3>
-            <p>Lovely Professional University (2023-2027)</p>
-          </article>
-
-          <article className="about-feature-card">
-            <div className="about-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M7 18h10a4 4 0 1 0-.8-7.92A5.5 5.5 0 0 0 5.57 11.5 3.5 3.5 0 0 0 7 18Z"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <h3>Data Analyst</h3>
-            <p>Transforming data into insights using machine learning and analytics</p>
-          </article>
+        <div className="about-right">
+          <div className="about-feature-grid futuristic-grid">
+            <article className="about-feature-card futuristic-card">
+              <div className="about-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#8b5cf6" strokeWidth="2.2"/><path d="M8 12l2.5 2.5L16 9" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <h3>Analytical Thinking</h3>
+              <p>Breaks down complex problems and finds logical, data-driven solutions.</p>
+            </article>
+            <article className="about-feature-card futuristic-card">
+              <div className="about-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#38bdf8" strokeWidth="2.2"/><path d="M8 12h8M12 8v8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"/></svg>
+              </div>
+              <h3>Data-Driven</h3>
+              <p>Uses data to inform decisions and validate outcomes for every project.</p>
+            </article>
+            <article className="about-feature-card futuristic-card">
+              <div className="about-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="6" stroke="#fbbf24" strokeWidth="2.2"/><path d="M8 16l8-8M8 8h8v8" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"/></svg>
+              </div>
+              <h3>Clean Engineering</h3>
+              <p>Writes modular, maintainable code and builds robust, scalable systems.</p>
+            </article>
+            <article className="about-feature-card futuristic-card">
+              <div className="about-feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#a78bfa" strokeWidth="2.2"/><path d="M12 8v4l3 3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round"/></svg>
+              </div>
+              <h3>Continuous Learner</h3>
+              <p>Embraces new technologies and adapts quickly to evolving challenges.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
